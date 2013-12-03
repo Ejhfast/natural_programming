@@ -1,0 +1,111 @@
+@import "/reset.css"
+
+page-width = 800px;
+gutter = 15px;
+pad = 15px;
+
+body{
+    font-family:'helvetica neue', 'helvetica', arial, sans-serif;
+    font-size:16px;
+    color:#333;
+    line-height:1.4em;
+    background-color:#dedede;
+}
+h1{
+    font-size:1.2em;
+    font-weight:800;
+    line-height:2em;
+}
+h2{
+    font-size:1em;
+    font-weight:800;
+    line-height:2em;
+}
+
+.content{
+    width:page-width - 2*pad;
+    margin:2*gutter auto;
+    padding:pad pad * 2;
+    background-color:white;
+    border:1px solid #cdcdcd;
+}
+
+.prompt{
+    margin:(gutter / 3) 0;
+    width:92%;
+    font-weight:200;
+    font-size:1.2em;
+    font-style:italic;
+    padding:0 0 0 pad;
+    border-left:2px solid #eee;
+}
+.id{
+    backround-color:#4285f4;
+}
+
+.answer{
+    .response{
+        height:200px;
+        padding:(pad / 6) (pad / 3);
+        background-color:#eee;
+        border:1px solid #ddd;
+    }
+    margin:gutter 0;
+    .natural, .program{
+        float:left;
+        width:45%;
+        margin:0px 5% 0px 0px;
+    }
+    .program{
+        .response{
+            font-family:monaco;
+            font-size:.9em;
+        }
+    }
+}
+
+.list_requests{
+   .request_item{
+        a{
+            color:#333;
+        }
+    } 
+    .new_request{
+        margin:gutter 0;
+    }
+}
+
+.submit{
+    margin:gutter 0;
+}
+
+.request{
+    input{
+        margin:0 0 (gutter / 2) 0;
+        width:300px;
+        border:1px solid #ddd;
+        padding:(pad / 3);
+        font-size:1em;
+        background-color:#eee;
+    }
+    textarea{
+        border:1px solid #ddd;
+        width:600px;
+        padding:(pad / 3);
+        font-size:1em;
+        background-color:#eee;
+    }
+}
+
+button{
+    border:0px solid #ddd;
+    background-color:#4285f4;
+    font-size:.9em;
+    color:white;
+    padding:5px 10px;
+    font-weight:800;
+}
+
+.clear{
+    clear:both;
+}

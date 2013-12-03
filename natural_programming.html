@@ -1,0 +1,69 @@
+<head>
+  <title>natural_programming</title>
+</head>
+
+<body>
+    <div class="content">
+        {{ renderPage }}
+    </div>
+</body>
+
+<template name="collect_request">
+<div class="collector">
+    <h1>{{ request.title }}</h1>
+    <div class="prompt">{{ request.text }}</div>
+    <div class="answer">
+        <div class="natural">
+            <h2>Natural Langage Query</h2>
+            <div class="response" contentEditable=true>Click to edit.</div>
+        </div>
+        <div class="program">
+            <h2>Corresponding Program</h2>
+            <div class="response" contentEditable=true>Click to edit.</div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <button class="submit">Submit Response</button>
+</div>         
+</template>
+
+<template name="show_request">
+<div class="collector">
+    <h1>{{ request.title }}</h1>
+    <div class="prompt">{{ request.text }}</div>
+    {{#each responses}}
+    <div class="answer">
+        <div class="natural">
+            <h2>Natural Langage Query</h2>
+            <div class="response">{{{ natural_lang }}}</div>
+        </div>
+        <div class="program">
+            <h2>Corresponding Program</h2>
+            <div class="response">{{{ program }}}</div>
+        </div>
+    </div>
+    {{/each}}
+    <div class="clear"></div>
+</div>         
+
+</template>
+
+<template name="list_requests">
+<div class="list_requests">
+    <h1>{{ num_requests }} Incoming Requests</h1>
+    {{#each requests}}
+    <div class="request_item"><a href="/collect/{{ _id }}">{{ title }}</a></div>
+    {{/each}}
+    <button class="new_request">New Request</button>
+</div>        
+</template>
+
+<template name="request">
+<div class="request">
+    <h1>What would you like done?</h1>
+    <input type="text" placeholder="Enter a title for your request"></input>
+    <textarea placeholder="Enter your request in natural language"></textarea>
+    <div class="clear"></div>
+    <button class="submit-request">Make Request</button>
+</div>
+</template>
